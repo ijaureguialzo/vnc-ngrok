@@ -17,11 +17,19 @@ echo ' '
 sudo vncpasswd
 echo ' '
 echo ' '
+
 sudo apt-get -y install wget
 sudo apt-get -y install curl
+
+sudo apt-get -y install xfce4
+sudo apt-get -y install xfce4-goodies
+sudo apt-get purge -y pm-utils xscreensaver*
+echo '2' | sudo update-alternatives --config x-terminal-emulator
+
 wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
 sudo tar xvzf ./ngrok-v3-stable-linux-amd64.tgz -C /usr/local/bin
 ngrok authtoken ${auth}
+
 clear
 echo ' '
 echo 'Script runned successfully! Start VNC running in your shell: "sh start-vnc.sh'
